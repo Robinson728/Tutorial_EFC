@@ -11,6 +11,7 @@ namespace Tutorial_EFC.BLL
 {
     public class StudentBLL
     {
+        //consultas
         public static List<Student> GetStudentName(string name)
         {
             var context = new SchoolContext();
@@ -27,6 +28,16 @@ namespace Tutorial_EFC.BLL
                 Include(s => s.Grade).FirstOrDefault();
 
             return studentWithGrade;
+        }
+
+        //No utilizar este método
+        public static Student GetStudentGradeWithString(string name)
+        {
+            var context = new SchoolContext();
+
+            var studentWithString = context.Students.Where(s => s.Name == name).Include("Grade").FirstOrDefault();
+
+            return studentWithString;
         }
     }
 }
