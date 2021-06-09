@@ -10,7 +10,8 @@ namespace Tutorial_EFC.Models
     {
         public int StudentId { get; set; }
         public string Name { get; set; }
-        public int GradeId { get; set; }
-        public object Grade { get; internal set; }
+        public int CurrentGradeId { get; set; }
+        public Grade Grade { get; set; }
+        public StudentAddress Address { get; set; }
     }
 }

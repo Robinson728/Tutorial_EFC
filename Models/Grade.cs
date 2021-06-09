@@ -11,8 +11,11 @@ namespace Tutorial_EFC.Models
     {
         public int GradeId { get; set; }
         public string GradeName { get; set; }
+        public string Section { get; set; }
 
-        [ForeignKey("GradeId")]
-        public virtual List<Student> StudentDetails { get; set; }
+        public ICollection<Student> Students { get; set; }
+
+        /*[ForeignKey("GradeId")]
+        public virtual List<Student> StudentDetails { get; set; }*/
     }
 }
